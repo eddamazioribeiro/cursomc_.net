@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pedidos", "Pedidos.csproj", "{507B57AE-5B22-4AFE-8D96-E51A1B6E7335}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{507B57AE-5B22-4AFE-8D96-E51A1B6E7335}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{507B57AE-5B22-4AFE-8D96-E51A1B6E7335}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{507B57AE-5B22-4AFE-8D96-E51A1B6E7335}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{507B57AE-5B22-4AFE-8D96-E51A1B6E7335}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03315D64-63FA-4024-9774-8B29DF036C84}
+	EndGlobalSection
+EndGlobal
