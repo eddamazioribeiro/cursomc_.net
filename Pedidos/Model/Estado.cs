@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Pedidos.CustomException;
 
 namespace Pedidos.Model
 {
-    partial class Categoria
+    partial class Estado
     {
         private int _id;
         private string _nome;
-        private List<Produto> _produtos;
+        private string _sigla;
 
         public int Id
         {
@@ -20,31 +19,33 @@ namespace Pedidos.Model
                 return _id;
             }
         }
-
+        
         public string Nome
         {
             get
             {
                 return _nome;
             }
+
             set
             {
                 _nome = value;
             }
         }
 
-        public List<Produto> Produtos
+        public string Sigla
         {
             get
             {
-                return _produtos;
+                return _sigla;
             }
 
             set
             {
-                _produtos = value;
+                _sigla = value;
             }
-
         }
+
+
     }
 }

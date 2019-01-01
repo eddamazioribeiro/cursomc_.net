@@ -9,6 +9,9 @@ namespace Pedidos.Model
     partial class Produto
     {
         private int _id;
+        private string _nome;
+        private double _preco;
+        private List<Categoria> _categorias;
 
         public int Id
         {
@@ -18,8 +21,6 @@ namespace Pedidos.Model
             }
             
         }
-
-        private string _nome;
 
         public string Nome
         {
@@ -33,7 +34,6 @@ namespace Pedidos.Model
             }
         }
 
-        private double _preco;
 
         public double Preco
         {
@@ -47,8 +47,6 @@ namespace Pedidos.Model
             }
         }
 
-        private List<Categoria> _categorias;
-
         public List<Categoria> Categorias
         {
             get
@@ -60,7 +58,5 @@ namespace Pedidos.Model
                 _categorias = value;
             }
         }
-
-
     }
 }

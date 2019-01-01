@@ -3,21 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Pedidos.CustomException;
 
 namespace Pedidos.Model
 {
-    partial class Categoria
+    partial class Cidade
     {
         private int _id;
         private string _nome;
-        private List<Produto> _produtos;
+        private Estado _estado;
 
         public int Id
         {
             get
             {
                 return _id;
+            }
+
+            set
+            {
+                _id = value;
             }
         }
 
@@ -27,24 +31,25 @@ namespace Pedidos.Model
             {
                 return _nome;
             }
+
             set
             {
                 _nome = value;
             }
         }
 
-        public List<Produto> Produtos
+        public Estado Estado
         {
             get
             {
-                return _produtos;
+                return _estado;
             }
 
             set
             {
-                _produtos = value;
+                _estado = value;
             }
-
         }
+
     }
 }

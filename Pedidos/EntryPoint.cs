@@ -46,22 +46,17 @@ namespace Pedidos
             prod2.Categorias = catProd2;
             prod3.Categorias = catProd3;
 
-            // Lista Caterogias e seus Produtos
-            //List<Categoria> categorias = new List<Categoria>();
-            //categorias.Add(cat1);
-            //categorias.Add(cat2);
+            // Estados
+            Estado est1 = new Estado(1, "Minas Gerais", "MG");
+            Estado est2 = new Estado(2, "São Paulo", "SP");
 
+            // Cidades
+            Cidade cid1 = new Cidade(1, "Uberlândia", est1);
+            Cidade cid2 = new Cidade(1, "Mococa", est2);
 
-            //foreach(Categoria cat in categorias)
-            //{
-            //    Console.WriteLine(cat.Id + " - " + cat.Nome + "\nProdutos");
-            //    foreach (Produto prod in cat.Produtos)
-            //    {
-            //        Console.WriteLine("-- " + prod.Id + " - " + prod.Nome + " - Preço: " + prod.Preco);
-            //    }
-
-            //}
-
+            // Endereços
+            Endereco end1 = new Endereco(1, "Rua das Flores", 300, "Apto. 31", 13730000, cid1);
+            Endereco end2 = new Endereco(2, "Rua Maestro Paschoal Gagliardi", 444, null, 13734000, cid2);
         }
     }
 }
