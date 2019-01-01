@@ -20,7 +20,7 @@ namespace Pedidos
             Produto prod2 = new Produto(2, "Impressora", 800, null);
             Produto prod3 = new Produto(3, "Mouse", 70, null);
 
-            // Associa Categoria - Produto
+            // Associa Produto - Categoria
             List<Produto> produtos1 = new List<Produto>();
             produtos1.Add(prod1);
             produtos1.Add(prod2);
@@ -32,20 +32,35 @@ namespace Pedidos
             cat1.Produtos = produtos1;
             cat2.Produtos = produtos2;
 
+            // Associa Categoria - Produto
+            List<Categoria> catProd1 = new List<Categoria>();
+            List<Categoria> catProd2 = new List<Categoria>();
+            List<Categoria> catProd3 = new List<Categoria>();
+
+            catProd1.Add(cat1);
+            catProd2.Add(cat1);
+            catProd2.Add(cat2);
+            catProd3.Add(cat1);
+
+            prod1.Categorias = catProd1;
+            prod2.Categorias = catProd2;
+            prod3.Categorias = catProd3;
+
             // Lista Caterogias e seus Produtos
-            List<Categoria> categorias = new List<Categoria>();
-            categorias.Add(cat1);
-            categorias.Add(cat2);
+            //List<Categoria> categorias = new List<Categoria>();
+            //categorias.Add(cat1);
+            //categorias.Add(cat2);
 
-            foreach(Categoria cat in categorias)
-            {
-                Console.WriteLine(cat.Id + " - " + cat.Nome + "\nProdutos");
-                foreach (Produto prod in cat.Produtos)
-                {
-                    Console.WriteLine("-- " + prod.Id + " - " + prod.Nome + " - Preço: " + prod.Preco);
-                }
 
-            }
+            //foreach(Categoria cat in categorias)
+            //{
+            //    Console.WriteLine(cat.Id + " - " + cat.Nome + "\nProdutos");
+            //    foreach (Produto prod in cat.Produtos)
+            //    {
+            //        Console.WriteLine("-- " + prod.Id + " - " + prod.Nome + " - Preço: " + prod.Preco);
+            //    }
+
+            //}
 
         }
     }
