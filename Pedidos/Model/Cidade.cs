@@ -6,11 +6,23 @@ using System.Threading.Tasks;
 
 namespace Pedidos.Model
 {
-    partial class Cidade
+    class Cidade
     {
         private int _id;
         private string _nome;
         private Estado _estado;
+
+        public Cidade()
+        {
+
+        }
+
+        public Cidade(int id, string nome, Estado estado)
+        {
+            _id = id;
+            _nome = nome;
+            _estado = estado;
+        }
 
         public int Id
         {

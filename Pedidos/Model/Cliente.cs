@@ -7,7 +7,7 @@ using Pedidos.Model.Enum;
 
 namespace Pedidos.Model
 {
-    partial class Cliente
+    class Cliente
     {
         private int _id;
         private string _nome;
@@ -16,6 +16,23 @@ namespace Pedidos.Model
         private int _tipoCliente;
         private List<string> _telefones;
         private List<Endereco> _enderecos;
+
+        public Cliente()
+        {
+
+        }
+
+        public Cliente(int id, string nome, string email, string cpfCnpj, TipoCliente tipoCliente,
+            List<string> telefones, List<Endereco> enderecos)
+        {
+            _id = id;
+            _nome = nome;
+            _email = email;
+            _cpfCnpj = cpfCnpj;
+            _tipoCliente = tipoCliente.GetHashCode();
+            _telefones = telefones;
+            _enderecos = enderecos;
+        }
 
         public int Id
         {

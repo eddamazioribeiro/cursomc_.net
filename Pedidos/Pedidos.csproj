@@ -49,19 +49,13 @@
     <Compile Include="Controller\Validacao.cs" />
     <Compile Include="EntryPoint.cs" />
     <Compile Include="Model\Categoria.cs" />
-    <Compile Include="Model\CategoriaMethods.cs" />
     <Compile Include="CustomException\ValidacaoException.cs" />
     <Compile Include="Model\Cidade.cs" />
-    <Compile Include="Model\CidadeMethods.cs" />
-    <Compile Include="Model\ClienteMethods.cs" />
     <Compile Include="Model\Cliente.cs" />
-    <Compile Include="Model\EnderecoMethods.cs" />
     <Compile Include="Model\Endereco.cs" />
     <Compile Include="Model\Enum\TipoCliente.cs" />
     <Compile Include="Model\Estado.cs" />
-    <Compile Include="Model\EstadoMethods.cs" />
     <Compile Include="Model\Produto.cs" />
-    <Compile Include="Model\ProdutoMethods.cs" />
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
     </Compile>

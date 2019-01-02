@@ -12,6 +12,18 @@ namespace Pedidos.Model
         private string _nome;
         private string _sigla;
 
+        public Estado()
+        {
+
+        }
+
+        public Estado(int id, string nome, string sigla)
+        {
+            _id = id;
+            _nome = nome;
+            _sigla = sigla;
+        }
+
         public int Id
         {
             get

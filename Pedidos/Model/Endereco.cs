@@ -15,6 +15,21 @@ namespace Pedidos.Model
         private string _cep;
         private Cidade _cidade;
 
+        public Endereco()
+        {
+
+        }
+
+        public Endereco(int id, string logradouro, int numero, string complemento, string cep, Cidade cidade)
+        {
+            _id = id;
+            _logradouro = logradouro;
+            _numero = numero;
+            _complemento = complemento;
+            _cep = cep;
+            _cidade = cidade;
+        }
+
         public int Id
         {
             get

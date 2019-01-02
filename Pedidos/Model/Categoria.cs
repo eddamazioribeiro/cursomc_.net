@@ -3,15 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Pedidos.Controller.Validacao;
 using Pedidos.CustomException;
 
 namespace Pedidos.Model
 {
-    partial class Categoria
+    class Categoria
     {
         private int _id;
         private string _nome;
         private List<Produto> _produtos;
+
+        public Categoria()
+        {
+
+        }
+
+        public Categoria(int id, string nome, List<Produto> produtos)
+        {
+            _id = id;
+
+            Validacoes.ValidaNome(this, nome, 20);
+            _nome = nome;
+            _produtos = produtos;
+        }
 
         public int Id
         {
