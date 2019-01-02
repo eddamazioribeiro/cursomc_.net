@@ -13,7 +13,7 @@ namespace Pedidos.Model
 
         }
 
-        public Endereco(int id, string logradouro, int numero, string complemento, int cep, Cidade cidade)
+        public Endereco(int id, string logradouro, int numero, string complemento, string cep, Cidade cidade)
         {
             _id = id;
             _logradouro = logradouro;

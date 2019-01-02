@@ -12,7 +12,7 @@ namespace Pedidos.Model
         private string _logradouro;
         private int _numero;
         private string _complemento;
-        private int _cep;
+        private string _cep;
         private Cidade _cidade;
 
         public int Id
@@ -67,7 +67,7 @@ namespace Pedidos.Model
             }
         }
 
-        public int CEP
+        public string CEP
         {
             get
             {

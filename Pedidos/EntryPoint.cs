@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Pedidos.Model;
+using Pedidos.Model.Enum;
 
 namespace Pedidos
 {
@@ -55,8 +56,20 @@ namespace Pedidos
             Cidade cid2 = new Cidade(1, "Mococa", est2);
 
             // Endereços
-            Endereco end1 = new Endereco(1, "Rua das Flores", 300, "Apto. 31", 13730000, cid1);
-            Endereco end2 = new Endereco(2, "Rua Maestro Paschoal Gagliardi", 444, null, 13734000, cid2);
+            Endereco end1 = new Endereco(1, "Rua das Flores", 300, "Apto. 31", "13730-000", cid1);
+            Endereco end2 = new Endereco(2, "Rua Maestro Paschoal Gagliardi", 444, null, "13734-400", cid2);
+
+            // Cliente
+            List<string> telefones = new List<string>();
+            telefones.Add("(19)993601202");
+
+            List<Endereco> enderecos = new List<Endereco>();
+            enderecos.Add(end1);
+            enderecos.Add(end2);
+
+            Cliente cli1 = new Cliente(1, "Eduardo Ribeiro", "ed.damazioribeiro@gmail.com", "414.887.248-81", TipoCliente.PESSOA_FISICA,
+                telefones, enderecos);
+
         }
     }
 }
