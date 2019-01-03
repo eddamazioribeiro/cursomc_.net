@@ -70,6 +70,32 @@ namespace Pedidos
             Cliente cli1 = new Cliente(1, "Eduardo Ribeiro", "ed.damazioribeiro@gmail.com", "414.887.248-81", TipoCliente.PESSOA_FISICA,
                 telefones, enderecos);
 
+            // Pedido, Pagamento, Itens do Pedido
+            // Pedido 1
+            DateTime dataPedido1 = new DateTime(2019, 1, 2, 8, 00, 06);
+            PagamentoComCartao pagPed1 = new PagamentoComCartao(1, SituacaoPagamento.QUITADO, 6);
+            Pedido ped1 = new Pedido(1, dataPedido1, pagPed1, cli1, end1, null);
+            ItemPedido itemPedido1A = new ItemPedido(ped1, prod1, 2, (prod1.Preco * 2), 0);
+            ItemPedido itemPedido1B = new ItemPedido(ped1, prod2, 3, (prod1.Preco * 3), 20);
+
+            List<ItemPedido> itensPedido1 = new List<ItemPedido>();
+            itensPedido1.Add(itemPedido1A);
+            itensPedido1.Add(itemPedido1B);
+
+            ped1.ItensPedido = itensPedido1;
+
+            // Pedido 2
+            DateTime dataPedido2 = new DateTime(2018, 12, 30, 10, 30, 00);
+            DateTime dataVencPedido2 = new DateTime(2019, 1, 5, 10, 30, 00);
+            PagamentoComBoleto pagPed2 = new PagamentoComBoleto(2, SituacaoPagamento.PENDENTE, dataPedido2, null);
+            Pedido ped2 = new Pedido(1, dataPedido2, pagPed2, cli1, end2, null);
+            ItemPedido itemPedido2A = new ItemPedido(ped2, prod3, 3, (prod1.Preco * 3), 0);
+
+            List<ItemPedido> itensPedido2 = new List<ItemPedido>();
+            itensPedido2.Add(itemPedido2A);
+
+            ped2.ItensPedido = itensPedido2;
+
         }
     }
 }

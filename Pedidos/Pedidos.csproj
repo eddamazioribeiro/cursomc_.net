@@ -53,8 +53,14 @@
     <Compile Include="Model\Cidade.cs" />
     <Compile Include="Model\Cliente.cs" />
     <Compile Include="Model\Endereco.cs" />
+    <Compile Include="Model\Enum\SituacaoPagamento.cs" />
     <Compile Include="Model\Enum\TipoCliente.cs" />
     <Compile Include="Model\Estado.cs" />
+    <Compile Include="Model\ItemPedido.cs" />
+    <Compile Include="Model\PagamentoComCartao.cs" />
+    <Compile Include="Model\PagamentoComBoleto.cs" />
+    <Compile Include="Model\Pagamento.cs" />
+    <Compile Include="Model\Pedido.cs" />
     <Compile Include="Model\Produto.cs" />
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>

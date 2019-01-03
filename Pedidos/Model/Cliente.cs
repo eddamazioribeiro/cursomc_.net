@@ -16,6 +16,7 @@ namespace Pedidos.Model
         private int _tipoCliente;
         private List<string> _telefones;
         private List<Endereco> _enderecos;
+        private List<Pedido> _pedidos;
 
         public Cliente()
         {
@@ -122,6 +123,19 @@ namespace Pedidos.Model
             set
             {
                 _enderecos = value;
+            }
+        }
+
+        public List<Pedido> Pedidos
+        {
+            get
+            {
+                return _pedidos;
+            }
+
+            set
+            {
+                _pedidos = value;
             }
         }
     }
