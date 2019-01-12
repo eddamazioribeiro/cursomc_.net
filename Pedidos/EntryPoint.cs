@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Configuration;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Pedidos.Model;
-using Pedidos.Model.Enum;
+using Pedidos.Models;
+using Pedidos.Models.Enum;
+using Dapper;
+using System.Collections;
 
 namespace Pedidos
 {
@@ -12,6 +16,7 @@ namespace Pedidos
     {
         static void Main(string[] args)
         {
+            
             // Categorias
             Categoria cat1 = new Categoria(1, "Informática", null);
             Categoria cat2 = new Categoria(2, "Escritório", null);

@@ -8,3 +8,16 @@ C:\dev\workspace\dotnet\Pedidos\Pedidos\obj\Debug\Pedidos.csproj.CoreCompileInpu
 C:\dev\workspace\dotnet\Pedidos\Pedidos\obj\Debug\Pedidos.exe
 C:\dev\workspace\dotnet\Pedidos\Pedidos\obj\Debug\Pedidos.pdb
 C:\dev\workspace\dotnet\Pedidos\Pedidos\obj\Debug\Pedidos.csprojAssemblyReference.cache
+C:\dev\workspace\Pedidos\Pedidos\bin\Debug\Pedidos.exe.config
+C:\dev\workspace\Pedidos\Pedidos\bin\Debug\Pedidos.exe
+C:\dev\workspace\Pedidos\Pedidos\bin\Debug\Pedidos.pdb
+C:\dev\workspace\Pedidos\Pedidos\obj\Debug\Pedidos.csprojAssemblyReference.cache
+C:\dev\workspace\Pedidos\Pedidos\obj\Debug\Pedidos.FrmCategoria.resources
+C:\dev\workspace\Pedidos\Pedidos\obj\Debug\Pedidos.Properties.Resources.resources
+C:\dev\workspace\Pedidos\Pedidos\obj\Debug\Pedidos.csproj.GenerateResource.cache
+C:\dev\workspace\Pedidos\Pedidos\obj\Debug\Pedidos.csproj.CoreCompileInputs.cache
+C:\dev\workspace\Pedidos\Pedidos\obj\Debug\Pedidos.exe
+C:\dev\workspace\Pedidos\Pedidos\obj\Debug\Pedidos.pdb
+C:\dev\workspace\Pedidos\Pedidos\bin\Debug\Dapper.dll
+C:\dev\workspace\Pedidos\Pedidos\bin\Debug\Dapper.xml
+C:\dev\workspace\Pedidos\Pedidos\obj\Debug\Pedidos.csproj.CopyComplete
