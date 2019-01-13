@@ -1,5 +1,0 @@
-C:\dev\workspace\Pedidos\Pedidos\obj\Debug\PedidosTeste.csprojAssemblyReference.cache
-C:\dev\workspace\Pedidos\Pedidos\obj\Debug\Pedidos.exe.config
-C:\dev\workspace\Pedidos\Pedidos\obj\Debug\Pedidos.Properties.Resources.resources
-C:\dev\workspace\Pedidos\Pedidos\obj\Debug\PedidosTeste.csproj.GenerateResource.cache
-C:\dev\workspace\Pedidos\Pedidos\obj\Debug\PedidosTeste.csproj.CoreCompileInputs.cache
