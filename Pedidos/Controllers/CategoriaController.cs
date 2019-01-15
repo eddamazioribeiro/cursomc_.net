@@ -30,7 +30,15 @@ namespace PedidosWeb.Controllers
         // GET: Categoria/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            Categoria categoria = new Categoria();
+            using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["categoriaConnection"].ConnectionString))
+            {
+                categoria = db.Query<Categoria>(
+                    "SELECT c.id, c.nome " +
+                    "FROM   loja.dbo.categoria c " +
+                    "WHERE  c.id = @Id", new { id = id }).SingleOrDefault();
+            }
+            return View(categoria);
         }
 
         // GET: Categoria/Create
@@ -41,62 +49,84 @@ namespace PedidosWeb.Controllers
 
         // POST: Categoria/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Categoria categoria)
         {
-            try
+            using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["categoriaConnection"].ConnectionString))
             {
-                // TODO: Add insert logic here
+                string sqlQuery = 
+                    "INSERT INTO loja.dbo.categoria(" +
+                    "id," +
+                    "nome)" +
+                    "VALUES(" +
+                    categoria.Id + "," +
+                    " ' " + categoria.Nome + " ')";
 
-                return RedirectToAction("Index");
+                int rowsAffected = db.Execute(sqlQuery); 
             }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("Index");
+            
         }
 
         // GET: Categoria/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            Categoria categoria = new Categoria();
+            using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["categoriaConnection"].ConnectionString))
+            {
+                categoria = db.Query<Categoria>(
+                    "SELECT c.id, c.nome " +
+                    "FROM   loja.dbo.categoria c " +
+                    "WHERE  c.id = " + id, new { id }).SingleOrDefault();
+            }
+
+            return View(categoria);
         }
 
         // POST: Categoria/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Categoria categoria)
         {
-            try
+            using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["categoriaConnection"].ConnectionString))
             {
-                // TODO: Add update logic here
+                string sqlQuery =
+                    "UPDATE loja.dbo.categoria " +
+                    "SET    nome = ' " + categoria.Nome + " ' " +
+                    "WHERE  id = " + categoria.Id;
 
-                return RedirectToAction("Index");
+                int rowsAffected = db.Execute(sqlQuery);
             }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("Index");
         }
 
         // GET: Categoria/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            Categoria categoria = new Categoria();
+            using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["categoriaConnection"].ConnectionString))
+            {
+                categoria = db.Query<Categoria>(
+                    "SELECT c.id, c.nome " +
+                    "FROM   loja.dbo.categoria c " +
+                    "WHERE  c.id = " + id, new { id }).SingleOrDefault();
+            }
+
+            return View(categoria);
         }
 
         // POST: Categoria/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
-            try
+            using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["categoriaConnection"].ConnectionString))
             {
-                // TODO: Add delete logic here
+                string sqlQuery =
+                    "DELETE " +
+                    "FROM   loja.dbo.categoria " +
+                    "WHERE  id = " + id;
 
-                return RedirectToAction("Index");
+                int rowsAffected = db.Execute(sqlQuery);
             }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("Index");
         }
     }
 }
