@@ -13,31 +13,44 @@ namespace PedidosWeb.Controllers
 {
     public class CategoriaController : Controller
     {
-        // GET: Categoria
-        public ActionResult Index()
-        {
-            List<Categoria> CategoriaList = new List<Categoria>();
-            using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["categoriaConnection"].ConnectionString))
-            {
-                CategoriaList = db.Query<Categoria>(
-                    "SELECT c.id, c.nome " +
-                    "FROM   loja.dbo.categoria c").ToList();
-            }
-
-            return View(CategoriaList);
-        }
-
-        // GET: Categoria/Details/5
-        public ActionResult Details(int id)
+        private Categoria FindCategoria(int id)
         {
             Categoria categoria = new Categoria();
+
             using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["categoriaConnection"].ConnectionString))
             {
                 categoria = db.Query<Categoria>(
                     "SELECT c.id, c.nome " +
                     "FROM   loja.dbo.categoria c " +
-                    "WHERE  c.id = @Id", new { id = id }).SingleOrDefault();
+                    "WHERE  c.id = @Id", new { id }).SingleOrDefault();
             }
+
+            return categoria;
+        }
+        
+        // GET: Categoria
+        [HttpGet]
+        public ActionResult Index()
+        {
+            List<Categoria> categoriaList = new List<Categoria>();
+            using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["categoriaConnection"].ConnectionString))
+            {
+                categoriaList = db.Query<Categoria>(
+                    "SELECT c.id, c.nome " +
+                    "FROM   loja.dbo.categoria c").ToList();
+            }
+
+            return View(categoriaList);
+        }
+
+
+        // GET: Categoria/Details/5
+        [HttpGet]
+        public ActionResult Details(int id)
+        {
+            Categoria categoria = new Categoria();
+            categoria = FindCategoria(id);
+
             return View(categoria);
         }
 
@@ -51,33 +64,38 @@ namespace PedidosWeb.Controllers
         [HttpPost]
         public ActionResult Create(Categoria categoria)
         {
-            using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["categoriaConnection"].ConnectionString))
-            {
-                string sqlQuery = 
-                    "INSERT INTO loja.dbo.categoria(" +
-                    "id," +
-                    "nome)" +
-                    "VALUES(" +
-                    categoria.Id + "," +
-                    " ' " + categoria.Nome + " ')";
 
-                int rowsAffected = db.Execute(sqlQuery); 
-            }
-            return RedirectToAction("Index");
-            
+            Categoria categoriaAux = FindCategoria(categoria.Id);
+            if (categoriaAux == null)
+            {
+
+                using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["categoriaConnection"].ConnectionString))
+                {
+                    string sqlQuery =
+                        "INSERT INTO loja.dbo.categoria(" +
+                        "id," +
+                        "nome)" +
+                        "VALUES(" +
+                        categoria.Id + "," +
+                        " ' " + categoria.Nome + " ')";
+
+                    int rowsAffected = db.Execute(sqlQuery);
+                }
+
+                return RedirectToAction("Index");
+            } else
+            {
+                return RedirectToAction("Details", new {id = categoria.Id});
+            }           
+
         }
 
         // GET: Categoria/Edit/5
+        [HttpGet]
         public ActionResult Edit(int id)
         {
             Categoria categoria = new Categoria();
-            using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["categoriaConnection"].ConnectionString))
-            {
-                categoria = db.Query<Categoria>(
-                    "SELECT c.id, c.nome " +
-                    "FROM   loja.dbo.categoria c " +
-                    "WHERE  c.id = " + id, new { id }).SingleOrDefault();
-            }
+            categoria = FindCategoria(id);
 
             return View(categoria);
         }
@@ -99,16 +117,11 @@ namespace PedidosWeb.Controllers
         }
 
         // GET: Categoria/Delete/5
+        [HttpGet]
         public ActionResult Delete(int id)
         {
             Categoria categoria = new Categoria();
-            using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["categoriaConnection"].ConnectionString))
-            {
-                categoria = db.Query<Categoria>(
-                    "SELECT c.id, c.nome " +
-                    "FROM   loja.dbo.categoria c " +
-                    "WHERE  c.id = " + id, new { id }).SingleOrDefault();
-            }
+            categoria = FindCategoria(id);
 
             return View(categoria);
         }
